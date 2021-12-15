@@ -1,6 +1,6 @@
 <template>
     <form class="w-full" @submit.prevent="storeModel">
-        
+
         <div class=" sm:col-span-4">
             <jet-label for="name" value="Name" />
             <jet-input class="w-full" type="text" id="name" name="name" v-model="form.name"
@@ -8,7 +8,7 @@
             ></jet-input>
             <jet-input-error :message="form.errors.name" class="mt-2" />
         </div>
-            
+
         <div class=" sm:col-span-4">
             <jet-label for="email" value="Email" />
             <jet-input class="w-full" type="text" id="email" name="email" v-model="form.email"
@@ -16,21 +16,21 @@
             ></jet-input>
             <jet-input-error :message="form.errors.email" class="mt-2" />
         </div>
-            
+
         <div class=" sm:col-span-4">
             <jet-label for="password" value="Password" />
-            <jet-input type="time" id="password" name="password" v-model="form.password"
+            <jet-input type="password" id="password" name="password" v-model="form.password"
                        :class="{'border-red-500 sm:focus:border-red-300 sm:focus:ring-red-100': form.errors.password}"
             ></jet-input>
             <jet-input-error :message="form.errors.password" class="mt-2" />
         </div>
         <div class=" sm:col-span-4">
             <jet-label for="password_confirmation" value="Repeat Password" />
-            <jet-input type="time" id="password_confirmation" name="password_confirmation" v-model="form.password_confirmation"
+            <jet-input type="password" id="password_confirmation" name="password_confirmation" v-model="form.password_confirmation"
                        :class="{'border-red-500 sm:focus:border-red-300 sm:focus:ring-red-100': form.errors.password_confirmation}"
             ></jet-input>
         </div>
-            
+
         <div class=" sm:col-span-4">
             <jet-label for="profile_photo_path" value="Profile Photo Path" />
             <jet-input class="w-full" type="text" id="profile_photo_path" name="profile_photo_path" v-model="form.profile_photo_path"
@@ -38,7 +38,7 @@
             ></jet-input>
             <jet-input-error :message="form.errors.profile_photo_path" class="mt-2" />
         </div>
-            
+
         <div class=" sm:col-span-4">
             <jet-label for="two_factor_secret" value="Two Factor Secret" />
             <jig-textarea class="w-full" id="two_factor_secret" name="two_factor_secret" v-model="form.two_factor_secret"
@@ -46,7 +46,7 @@
             ></jig-textarea>
             <jet-input-error :message="form.errors.two_factor_secret" class="mt-2" />
         </div>
-            
+
         <div class=" sm:col-span-4">
             <jet-label for="two_factor_recovery_codes" value="Two Factor Recovery Codes" />
             <jig-textarea class="w-full" id="two_factor_recovery_codes" name="two_factor_recovery_codes" v-model="form.two_factor_recovery_codes"
@@ -54,7 +54,7 @@
             ></jig-textarea>
             <jet-input-error :message="form.errors.two_factor_recovery_codes" class="mt-2" />
         </div>
-            
+
         <div class=" sm:col-span-4">
             <jet-label for="email_verified_at" value="Email Verified At" />
             <jig-datepicker class="w-full"
@@ -70,7 +70,7 @@
             ></jig-datepicker>
             <jet-input-error :message="form.errors.email_verified_at" class="mt-2" />
         </div>
-            
+
         <div class=" sm:col-span-4">
             <jet-label for="current_team_id" value="Current Team Id" />
             <jet-input class="w-full" type="text" id="current_team_id" name="current_team_id" v-model="form.current_team_id"
@@ -78,7 +78,7 @@
             ></jet-input>
             <jet-input-error :message="form.errors.current_team_id" class="mt-2" />
         </div>
-                
+
         <div class="mt-2 text-right">
             <inertia-button type="submit" class="font-semibold bg-success disabled:opacity-25" :disabled="form.processing">Submit</inertia-button>
         </div>
@@ -99,7 +99,10 @@
             InertiaButton,
             JetInputError,
             JetLabel,
-             JigDatepicker,             JetInput,                         JigTextarea,            
+            JigDatepicker,
+            JetInput,
+            JigTextarea,
+
         },
         data() {
             return {
@@ -107,12 +110,12 @@
                     name: null,
                     email: null,
                     password: null,
-                    profile_photo_path: null,
-                    two_factor_secret: null,
-                    two_factor_recovery_codes: null,
-                    email_verified_at: null,
-                    current_team_id: null,
-                                                            
+                    // profile_photo_path: null,
+                    // two_factor_secret: null,
+                    // two_factor_recovery_codes: null,
+                    // email_verified_at: null,
+                    // current_team_id: null,
+
                 }, {remember: false}),
             }
         },

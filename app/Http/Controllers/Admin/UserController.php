@@ -69,6 +69,7 @@ class UserController  extends Controller
     */
     public function store(StoreUser $request)
     {
+        return $request;
         try {
             $data = $request->sanitizedObject();
             $user = $this->repo::store($data);
@@ -120,7 +121,7 @@ class UserController  extends Controller
                 return $role->only(['id','name','title', 'checked']);
             })->keyBy('name');
             //Fetch relationships
-            
+
 
                         return Inertia::render("Users/Edit", ["model" => $user,"roles" => $roles]);
         } catch (\Throwable $exception) {
